@@ -37,6 +37,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    //this is delete api
     @MutationMapping
     public String deleteUserById(@Argument int id) {
         return userService.deleteUserById(id);
