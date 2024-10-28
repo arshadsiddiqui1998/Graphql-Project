@@ -28,6 +28,11 @@ public class ProductController {
     @MutationMapping
     public Product updateStock(@Argument int id, @Argument int stock) {
         return productService.updateProduct(id, stock);
-        
+
+    }
+
+    @MutationMapping
+    public Product updateStockShipment(@Argument int id, @Argument int stockShipment) {
+        return productService.updateProduct(id, stockShipment);
     }
 }

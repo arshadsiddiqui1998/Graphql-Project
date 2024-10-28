@@ -17,7 +17,7 @@ type Mutation{
     createUser(name:String,email:String,phone:String,password:String):User
     deleteUserById(id:ID!):String
     updateUserById(id:Int , userDto:UserDto):User
-
+    updateStockShipment(id:ID!,stockShipment:Int):Product
 }
 type User{
     userId:ID!

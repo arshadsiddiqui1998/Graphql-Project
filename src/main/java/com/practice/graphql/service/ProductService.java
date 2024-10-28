@@ -18,14 +18,21 @@ public class ProductService {
     }
 
     public List<Product> getProductByCategory(String category) {
+
         return productRepository.findByCategory(category);
     }
 
     public Product updateProduct(int id, int stock) {
         Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found" + id));
-
         product.setStock(stock);
         return productRepository.save(product);
     }
 
+    public Product updateStockShipment(int id, int stockShipment) {
+        Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found" + id));
+        int oldStock = product.getStock();
+        int newStock = stockShipment + oldStock;
+        product.setStock(newStock);
+        return productRepository.save(product);
+    }
 }
